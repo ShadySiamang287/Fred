@@ -83,7 +83,7 @@ void SceneManager::rehash() {
 void SceneManager::insert(std::string key, std::shared_ptr<Scene> value)
 {
     // first, check if we must rehash
-    if ((static_cast<float>(size) / static_cast<float>(capacity)) >= MAX_LOAD) {
+    if ((static_cast<float>(size + 1) / capacity) >= MAX_LOAD) {
         rehash();
     }
 
